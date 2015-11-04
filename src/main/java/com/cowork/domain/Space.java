@@ -30,31 +30,31 @@ public class Space implements Serializable {
 
 
     @NotNull
-    @Size(min = 3)        
+    @Size(min = 3)
     @Column(name = "title", nullable = false)
     private String title;
-    
+
     @Column(name = "description")
     private String description;
-    
+
     @Column(name = "location")
     private String location;
-    
+
     @Column(name = "price")
     private Double price;
-    
+
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     @JsonSerialize(using = CustomDateTimeSerializer.class)
     @JsonDeserialize(using = CustomDateTimeDeserializer.class)
     @Column(name = "open_hour", nullable = false)
     private DateTime openHour;
-    
+
     @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentDateTime")
     @JsonSerialize(using = CustomDateTimeSerializer.class)
     @JsonDeserialize(using = CustomDateTimeDeserializer.class)
     @Column(name = "close_hour", nullable = false)
     private DateTime closeHour;
-    
+
     @Column(name = "capacity")
     private Integer capacity;
 
